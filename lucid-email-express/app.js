@@ -9,6 +9,7 @@ dotenv.config();
 
 const app = express();
 app.use(cors());
+
 app.use(bodyParser.json({ limit: "5mb" }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -26,6 +27,6 @@ app.get("/", (req, res) => {
 
 app.use("/", emailRoutes);
 
-// Start server
+// Server listen
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
